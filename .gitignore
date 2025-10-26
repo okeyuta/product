@@ -5,3 +5,5 @@
 /udemy_flask_memo-main
 /udemy_flask_memo-main.zip
 /メモアプリ.webloc
+# Ignore Atom editor configuration
+atom/

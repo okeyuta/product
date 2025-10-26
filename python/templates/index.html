@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block content %}
+<h1>メモアプリ</h1>
+<div class="actions">
+  <a href="/regist" role="botton" class="btn">新規登録</a>
+  <a href="/logout" role="botton" class="btn btn-secondary">ログアウト</a>
+</div>
+{% if memo_list == [] %}
+<p>メモは登録されていません</p>
+{% else %}
+<table id="memo-table">
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>メモ</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for memo in memo_list %}
+    <tr data-id="{{memo.id}}">
+      <td>{{memo.title}}</td>
+      <td>{{memo.body}}</td>
+      <td>
+        <a href="/{{memo.id}}/edit" class="btn btn-sm">編集</a>
+        <a href="/{{memo.id}}/delete" class="btn btn-sm btn-danger js-delete"
+          >削除</a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %} {% endblock %}

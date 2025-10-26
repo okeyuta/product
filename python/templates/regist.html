@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %}
+<h1>新規登録</h1>
+<form id="regist-form" method="POST">
+  <table border="1">
+    <tr>
+      <th>タイトル</th>
+      <th>メモ</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="title" required />
+      </td>
+      <td>
+        <input type="text" name="body" />
+      </td>
+    </tr>
+  </table>
+  <button type="submit" class="btn">新規登録</button>
+</form>
+<a href="/" role="button" class="btn btn-secondary">一覧に戻る</a>
+{% endblock %}
